@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Santa</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        form { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Secret Santa Assignment</h1>
+
+    <!-- Upload Employee List -->
+    <h3>Upload Employee List (CSV)</h3>
+    <form action="/secret_santa/upload/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    <!-- Upload Previous Assignments -->
+    <h3>Upload Previous Year Assignments (CSV)</h3>
+    <form action="/secret_santa/upload_previous_assignments/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    <!-- Generate Assignments -->
+    <h3>Generate Secret Santa Assignments</h3>
+    <form action="/secret_santa/generate/" method="post">
+        <button type="submit">Generate</button>
+    </form>
+
+    <!-- Export Assignments -->
+    <h3>Download Secret Santa Assignments</h3>
+    <a href="/secret_santa/export/" download>
+        <button>Download CSV</button>
+    </a>
+
+</body>
+</html>
